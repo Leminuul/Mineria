@@ -3,362 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Análisis exhaustivo de la minería ilegal en Ecuador: impactos ambientales, sociales y económicos. Soluciones para un desarrollo sostenible.">
-    <meta name="keywords" content="minería ilegal, Ecuador, Amazonía, medio ambiente, contaminación, mercurio, sostenibilidad">
-    <meta name="author" content="Investigación Minería Ilegal Ecuador">
-    <meta property="og:title" content="Minería Ilegal en Ecuador - Informe Completo">
-    <meta property="og:description" content="Un análisis exhaustivo de los impactos, causas y soluciones de la minería ilegal en Ecuador">
-    <meta property="og:type" content="website">
     <title>Minería Ilegal en Ecuador - Informe Completo</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: #f9fafb;
-            line-height: 1.6;
         }
-        
-        /* Improved contrast and accessibility */
         .navbar {
             transition: all 0.3s ease;
             background: linear-gradient(135deg, #1a3c34 0%, #2e6b5b 100%);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
         .navbar.scrolled {
-            background: rgba(26, 60, 52, 0.98);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            background: rgba(26, 60, 52, 0.95);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
         .nav-item {
             position: relative;
             transition: all 0.3s ease;
         }
-        
         .nav-item a {
-            padding: 0.75rem 1rem;
+            padding: 0.5rem 1rem;
             border-radius: 0.375rem;
             transition: all 0.3s ease;
-            font-weight: 500;
-            position: relative;
         }
-        
-        .nav-item a:focus {
-            outline: 2px solid #34d399;
-            outline-offset: 2px;
-        }
-        
         .nav-item:hover a {
-            transform: translateY(-2px);
+            transform: scale(1.1);
         }
-        
-        .nav-item.introduccion:hover a { background: #059669; }
-        .nav-item.problematica:hover a { background: #d97706; }
-        .nav-item.impactos:hover a { background: #dc2626; }
-        .nav-item.causas-consecuencias:hover a { background: #2563eb; }
-        .nav-item.soluciones:hover a { background: #059669; }
-        
-        .dropdown {
-            position: relative;
+        .nav-item.introduccion:hover a { background: #34d399; }
+        .nav-item.problematica:hover a { background: #f59e0b; }
+        .nav-item.impactos:hover a { background: #ef4444; }
+        .nav-item.causas-consecuencias:hover a { background: #3b82f6; }
+        .nav-item.soluciones:hover a { background: #10b981; }
+        .dropdown:hover .dropdown-menu {
+            display: block;
         }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 50;
-            min-width: 200px;
-        }
-        
-        .dropdown:hover .dropdown-menu,
-        .dropdown:focus-within .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
         .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: #374151;
-            text-decoration: none;
-            transition: background 0.2s ease;
-            border-radius: 0.375rem;
-            margin: 0.25rem;
-        }
-        
-        .dropdown-menu a:hover,
-        .dropdown-menu a:focus {
-            background: #f3f4f6;
-            color: #059669;
-        }
-        
-        /* Mobile menu styles */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(26, 60, 52, 0.98);
-            z-index: 1000;
-            padding-top: 4rem;
-        }
-        
-        .mobile-menu.active {
-            display: block;
-        }
-        
-        .mobile-menu-item {
-            display: block;
-            padding: 1rem 2rem;
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background 0.3s ease;
         }
-        
-        .mobile-menu-item:hover {
-            background: rgba(255, 255, 255, 0.1);
+        .dropdown-menu a:hover {
+            background: #e5e7eb;
         }
-        
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 2px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-        
-        @media (max-width: 768px) {
-            .desktop-menu {
-                display: none;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-        }
-        
         .panel {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e5e7eb;
         }
-        
         .panel:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
-        
-        .media-item {
+        .media-grid img, .media-grid iframe {
             transition: transform 0.3s ease;
-            border-radius: 0.5rem;
-            overflow: hidden;
         }
-        
-        .media-item:hover {
-            transform: scale(1.03);
+        .media-grid img:hover, .media-grid iframe:hover {
+            transform: scale(1.05);
         }
-        
         .social-icon {
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
-        
         .social-icon:hover {
             transform: scale(1.2);
             color: #34d399;
         }
-        
-        /* Loading placeholder for lazy images */
-        .img-placeholder {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-        
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-        
-        /* Improved form styles */
-        .form-input {
-            transition: all 0.3s ease;
-            border: 2px solid #d1d5db;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: #059669;
-            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
-        }
-        
-        .form-input.error {
-            border-color: #dc2626;
-            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
-        }
-        
-        .error-message {
-            color: #dc2626;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-        }
-        
-        /* Skip link for accessibility */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 6px;
-            background: #000;
-            color: #fff;
-            padding: 8px;
-            text-decoration: none;
-            border-radius: 4px;
-            z-index: 1000;
-        }
-        
-        .skip-link:focus {
-            top: 6px;
-        }
-        
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .panel {
-                border: 2px solid #000;
-            }
-            
-            .nav-item a {
-                border: 1px solid rgba(255, 255, 255, 0.5);
-            }
-        }
-        
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Skip Link for Screen Readers -->
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-    
     <!-- Navigation -->
-    <nav class="navbar fixed top-0 w-full z-50 text-white" role="navigation" aria-label="Navegación principal">
+    <nav class="navbar fixed top-0 w-full z-50 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
                     <h1 class="text-xl font-bold">Minería Ilegal en Ecuador</h1>
                 </div>
-                
-                <!-- Desktop Menu -->
-                <div class="desktop-menu">
-                    <ul class="flex space-x-2" role="menubar">
-                        <li class="nav-item introduccion dropdown" role="menuitem">
-                            <a href="#introduccion" class="text-white hover:text-white px-3 py-2 rounded-md" 
-                               aria-haspopup="true" aria-expanded="false">Introducción</a>
-                            <div class="dropdown-menu" role="menu" aria-label="Submenú Introducción">
-                                <a href="#objetivo-general" role="menuitem">Objetivo General</a>
-                                <a href="#objetivos-especificos" role="menuitem">Objetivos Específicos</a>
+                <div class="hidden md:block">
+                    <ul class="flex space-x-4">
+                        <li class="nav-item introduccion">
+                            <a href="#introduccion" class="text-white hover:text-white px-3 py-2 rounded-md">Introducción</a>
+                            <div class="dropdown-menu absolute hidden bg-white text-gray-800 mt-2 rounded-md shadow-lg">
+                                <a href="#objetivo-general" class="block px-4 py-2 hover:bg-gray-100">Objetivo General</a>
+                                <a href="#objetivos-especificos" class="block px-4 py-2 hover:bg-gray-100">Objetivos Específicos</a>
                             </div>
                         </li>
-                        <li class="nav-item problematica dropdown" role="menuitem">
-                            <a href="#problematica" class="text-white hover:text-white px-3 py-2 rounded-md"
-                               aria-haspopup="true" aria-expanded="false">Problemática</a>
-                            <div class="dropdown-menu" role="menu" aria-label="Submenú Problemática">
-                                <a href="#problematica-macro" role="menuitem">Macro</a>
-                                <a href="#problematica-meso" role="menuitem">Meso</a>
-                                <a href="#problematica-micro" role="menuitem">Micro</a>
+                        <li class="nav-item problematica">
+                            <a href="#problematica" class="text-white hover:text-white px-3 py-2 rounded-md">Problemática</a>
+                            <div class="dropdown-menu absolute hidden bg-white text-gray-800 mt-2 rounded-md shadow-lg">
+                                <a href="#problematica-macro" class="block px-4 py-2 hover:bg-gray-100">Macro</a>
+                                <a href="#problematica-meso" class="block px-4 py-2 hover:bg-gray-100">Meso</a>
+                                <a href="#problematica-micro" class="block px-4 py-2 hover:bg-gray-100">Micro</a>
                             </div>
                         </li>
-                        <li class="nav-item impactos dropdown" role="menuitem">
-                            <a href="#impactos" class="text-white hover:text-white px-3 py-2 rounded-md"
-                               aria-haspopup="true" aria-expanded="false">Impactos</a>
-                            <div class="dropdown-menu" role="menu" aria-label="Submenú Impactos">
-                                <a href="#salud-publica" role="menuitem">Salud Pública</a>
-                                <a href="#poblacion" role="menuitem">Población</a>
-                                <a href="#economia" role="menuitem">Economía</a>
+                        <li class="nav-item impactos">
+                            <a href="#impactos" class="text-white hover:text-white px-3 py-2 rounded-md">Impactos</a>
+                            <div class="dropdown-menu absolute hidden bg-white text-gray-800 mt-2 rounded-md shadow-lg">
+                                <a href="#salud-publica" class="block px-4 py-2 hover:bg-gray-100">Salud Pública</a>
+                                <a href="#poblacion" class="block px-4 py-2 hover:bg-gray-100">Población</a>
+                                <a href="#economia" class="block px-4 py-2 hover:bg-gray-100">Economía</a>
                             </div>
                         </li>
-                        <li class="nav-item causas-consecuencias dropdown" role="menuitem">
-                            <a href="#causas-consecuencias" class="text-white hover:text-white px-3 py-2 rounded-md"
-                               aria-haspopup="true" aria-expanded="false">Causas y Consecuencias</a>
-                            <div class="dropdown-menu" role="menu" aria-label="Submenú Causas y Consecuencias">
-                                <a href="#causas" role="menuitem">Causas</a>
-                                <a href="#consecuencias" role="menuitem">Consecuencias</a>
+                        <li class="nav-item causas-consecuencias">
+                            <a href="#causas-consecuencias" class="text-white hover:text-white px-3 py-2 rounded-md">Causas y Consecuencias</a>
+                            <div class="dropdown-menu absolute hidden bg-white text-gray-800 mt-2 rounded-md shadow-lg">
+                                <a href="#causas" class="block px-4 py-2 hover:bg-gray-100">Causas</a>
+                                <a href="#consecuencias" class="block px-4 py-2 hover:bg-gray-100">Consecuencias</a>
                             </div>
                         </li>
-                        <li class="nav-item soluciones" role="menuitem">
+                        <li class="nav-item soluciones">
                             <a href="#soluciones" class="text-white hover:text-white px-3 py-2 rounded-md">Soluciones Propuestas</a>
                         </li>
-                        <li class="nav-item" role="menuitem">
+                        <li class="nav-item">
                             <a href="#media" class="text-white hover:text-gray-300 px-3 py-2 rounded-md">Multimedia</a>
                         </li>
-                        <li class="nav-item" role="menuitem">
+                        <li class="nav-item">
                             <a href="#comments" class="text-white hover:text-gray-300 px-3 py-2 rounded-md">Comentarios</a>
                         </li>
                     </ul>
                 </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="hamburger" onclick="toggleMobileMenu()" aria-label="Abrir menú de navegación" role="button" tabindex="0">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú de navegación móvil">
-            <div class="flex justify-end p-4">
-                <button onclick="toggleMobileMenu()" class="text-white text-2xl" aria-label="Cerrar menú">&times;</button>
-            </div>
-            <a href="#introduccion" class="mobile-menu-item" onclick="toggleMobileMenu()">Introducción</a>
-            <a href="#problematica" class="mobile-menu-item" onclick="toggleMobileMenu()">Problemática</a>
-            <a href="#impactos" class="mobile-menu-item" onclick="toggleMobileMenu()">Impactos</a>
-            <a href="#causas-consecuencias" class="mobile-menu-item" onclick="toggleMobileMenu()">Causas y Consecuencias</a>
-            <a href="#soluciones" class="mobile-menu-item" onclick="toggleMobileMenu()">Soluciones Propuestas</a>
-            <a href="#media" class="mobile-menu-item" onclick="toggleMobileMenu()">Multimedia</a>
-            <a href="#comments" class="mobile-menu-item" onclick="toggleMobileMenu()">Comentarios</a>
         </div>
     </nav>
 
     <!-- Header -->
-    <header id="home" class="pt-24 pb-12 text-center bg-gradient-to-r from-green-900 to-teal-700 text-white" role="banner">
+    <header id="home" class="pt-24 pb-12 text-center bg-gradient-to-r from-green-900 to-teal-700 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
             <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Minería Ilegal en Ecuador</h1>
             <p class="text-lg md:text-xl italic">Un análisis exhaustivo de sus impactos, causas y soluciones para un futuro sostenible</p>
@@ -366,145 +132,168 @@
     </header>
 
     <!-- Main Content -->
-    <main id="main-content" class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" role="main">
-        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Panel 1: Introducción y Problemática -->
-            <article id="introduccion" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Introducción</h2>
-                </header>
-                <p class="mb-4">La minería ilegal en Ecuador, especialmente en regiones como la Amazonía, la Sierra y la Costa, es una amenaza crítica para el medio ambiente, la salud pública, la economía y la cohesión social. Esta actividad, impulsada por la alta demanda de oro, ha generado deforestación, contaminación y violencia en comunidades vulnerables. Este informe busca informar, concienciar y proponer soluciones para combatir este problema.</p>
-                
-                <section>
-                    <h3 id="objetivo-general" class="text-xl font-semibold text-green-900 mt-4 mb-2">Objetivo General</h3>
-                    <p class="mb-4">Analizar los impactos, causas y consecuencias de la minería ilegal en Ecuador para proponer soluciones que promuevan el desarrollo sostenible.</p>
-                </section>
-                
-                <section>
-                    <h3 id="objetivos-especificos" class="text-xl font-semibold text-green-900 mt-4 mb-2">Objetivos Específicos</h3>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>Identificar los efectos en la salud pública en comunidades cercanas a zonas mineras.</li>
-                        <li>Analizar los impactos socioeconómicos en comunidades locales y la economía nacional.</li>
-                        <li>Evaluar las causas estructurales y coyunturales de la minería ilegal.</li>
-                        <li>Proponer estrategias multisectoriales para mitigar el problema.</li>
-                    </ul>
-                </section>
-            </article>
+            <div id="introduccion" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
+                <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Introducción</h2>
+                <p>La minería ilegal en Ecuador, especialmente en regiones como la Amazonía, la Sierra y la Costa, es una amenaza crítica para el medio ambiente, la salud pública, la economía y la cohesión social. Esta actividad, impulsada por la alta demanda de oro, ha generado deforestación, contaminación y violencia en comunidades vulnerables. Este informe busca informar, concienciar y proponer soluciones para combatir este problema.</p>
+                <h3 id="objetivo-general" class="text-xl font-semibold text-green-900 mt-4">Objetivo General</h3>
+                <p>Analizar los impactos, causas y consecuencias de la minería ilegal en Ecuador para proponer soluciones que promuevan el desarrollo sostenible.</p>
+                <h3 id="objetivos-especificos" class="text-xl font-semibold text-green-900 mt-4">Objetivos Específicos</h3>
+                <ul class="list-disc pl-5">
+                    <li>Identificar los efectos en la salud pública en comunidades cercanas a zonas mineras.</li>
+                    <li>Analizar los impactos socioeconómicos en comunidades locales y la economía nacional.</li>
+                    <li>Evaluar las causas estructurales y coyunturales de la minería ilegal.</li>
+                    <li>Proponer estrategias multisectoriales para mitigar el problema.</li>
+                </ul>
+            </div>
 
             <!-- Panel 2: Problemática -->
-            <article id="problematica" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Problemática</h2>
-                </header>
-                
-                <section class="mb-4">
-                    <h3 id="problematica-macro" class="text-lg font-semibold text-green-900 mb-2">Nivel Macro</h3>
-                    <p class="mb-3">La demanda global de oro (hasta $2,000 por onza en 2023) y la debilidad institucional del Estado, con solo el 10% de actividades mineras legales en Napo, fomentan la minería ilegal. Grupos armados, como las disidencias de las FARC, financian operaciones, amenazando la seguridad nacional (<em>Banco Central del Ecuador, 2023; INTERPOL, 2023</em>).</p>
-                </section>
-                
-                <section class="mb-4">
-                    <h3 id="problematica-meso" class="text-lg font-semibold text-green-900 mb-2">Nivel Meso</h3>
-                    <p class="mb-3">Comunidades indígenas y campesinas en Napo, Orellana y Zamora Chinchipe enfrentan contaminación de ríos con mercurio, deforestación (1,700 hectáreas en Napo desde 2017) y violencia por grupos armados, lo que genera desplazamientos forzados (<em>Ministerio del Ambiente, 2024; Acción Ecológica, 2022</em>).</p>
-                </section>
-                
-                <section>
-                    <h3 id="problematica-micro" class="text-lg font-semibold text-green-900 mb-2">Nivel Micro</h3>
-                    <p>La exposición al mercurio causa trastornos neurológicos y defectos congénitos. En Zamora Chinchipe, el 26% de los niños presentan niveles de mercurio peligrosos. La deserción escolar y la criminalización de líderes ambientales agravan la crisis familiar (<em>Universidad San Francisco de Quito, 2023; Human Rights Watch, 2023</em>).</p>
-                </section>
-            </article>
+            <div id="problematica" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Problemática</h2>
+                <p id="problematica-macro"><strong>Macro:</strong> La demanda global de oro (hasta $2,000 por onza en 2023) y la debilidad institucional del Estado, con solo el 10% de actividades mineras legales en Napo, fomentan la minería ilegal. Grupos armados, como las disidencias de las FARC, financian operaciones, amenazando la seguridad nacional (<em>Banco Central del Ecuador, 2023; INTERPOL, 2023</em>).</p>
+                <p id="problematica-meso"><strong>Meso:</strong> Comunidades indígenas y campesinas en Napo, Orellana y Zamora Chinchipe enfrentan contaminación de ríos con mercurio, deforestación (1,700 hectáreas en Napo desde 2017) y violencia por grupos armados, lo que genera desplazamientos forzados (<em>Ministerio del Ambiente, 2024; Acción Ecológica, 2022</em>).</p>
+                <p id="problematica-micro"><strong>Micro:</strong> La exposición al mercurio causa trastornos neurológicos y defectos congénitos. En Zamora Chinchipe, el 26% de los niños presentan niveles de mercurio peligrosos. La deserción escolar y la criminalización de líderes ambientales agravan la crisis familiar (<em>Universidad San Francisco de Quito, 2023; Human Rights Watch, 2023</em>).</p>
+            </div>
 
             <!-- Panel 3: Impactos Detallados -->
-            <article id="impactos" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Impactos de la Minería Ilegal</h2>
-                </header>
-                
-                <section class="mb-4">
-                    <h3 id="salud-publica" class="text-xl font-semibold text-green-900 mb-2">Salud Pública</h3>
-                    <p class="mb-3">El uso de mercurio en la minería ilegal contamina ríos, suelos y el aire, afectando a comunidades que dependen de estas fuentes. En la Amazonía, los peces presentan niveles de mercurio hasta 1,000 veces superiores a los límites seguros, causando trastornos neurológicos, problemas renales y daños cerebrales. Las mujeres embarazadas son especialmente vulnerables, con riesgos de defectos congénitos en sus bebés. Un solo gramo de mercurio puede contaminar un lago de 8 hectáreas (<em>Naciones Unidas, 2023</em>).</p>
-                </section>
-                
-                <section class="mb-4">
-                    <h3 id="poblacion" class="text-xl font-semibold text-green-900 mb-2">Población</h3>
-                    <p class="mb-3">Comunidades indígenas como los kichwas en Napo enfrentan la pérdida de sus fuentes de agua y tierras agrícolas. La presencia de grupos armados introduce violencia, desplazamientos y problemas sociales como el aumento del consumo de alcohol y la deserción escolar. Los líderes que denuncian estas actividades enfrentan persecución judicial, debilitando la resistencia comunitaria (<em>Acción Ecológica, 2022</em>).</p>
-                </section>
-                
-                <section>
-                    <h3 id="economia" class="text-xl font-semibold text-green-900 mb-2">Economía</h3>
-                    <p>La minería ilegal priva al Estado de ingresos fiscales, con pérdidas millonarias que podrían destinarse a salud y educación. En 2022, las exportaciones mineras legales generaron $2,119 millones, pero la minería ilegal, que supera al sector florícola, no contribuye al PIB. Además, fomenta el lavado de dinero y la competencia desleal con la minería formal (<em>Banco Central del Ecuador, 2023</em>).</p>
-                </section>
-            </article>
+            <div id="impactos" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Impactos de la Minería Ilegal</h2>
+                <h3 id="salud-publica" class="text-xl font-semibold text-green-900 mt-4">Salud Pública</h3>
+                <p>El uso de mercurio en la minería ilegal contamina ríos, suelos y el aire, afectando a comunidades que dependen de estas fuentes. En la Amazonía, los peces presentan niveles de mercurio hasta 1,000 veces superiores a los límites seguros, causando trastornos neurológicos, problemas renales y daños cerebrales. Las mujeres embarazadas son especialmente vulnerables, con riesgos de defectos congénitos en sus bebés. Un solo gramo de mercurio puede contaminar un lago de 8 hectáreas (<em>Naciones Unidas, 2023</em>).</p>
+                <h3 id="poblacion" class="text-xl font-semibold text-green-900 mt-4">Población</h3>
+                <p>Comunidades indígenas como los kichwas en Napo enfrentan la pérdida de sus fuentes de agua y tierras agrícolas. La presencia de grupos armados introduce violencia, desplazamientos y problemas sociales como el aumento del consumo de alcohol y la deserción escolar. Los líderes que denuncian estas actividades enfrentan persecución judicial, debilitando la resistencia comunitaria (<em>Acción Ecológica, 2022</em>).</p>
+                <h3 id="economia" class="text-xl font-semibold text-green-900 mt-4">Economía</h3>
+                <p>La minería ilegal priva al Estado de ingresos fiscales, con pérdidas millonarias que podrían destinarse a salud y educación. En 2022, las exportaciones mineras legales generaron $2,119 millones, pero la minería ilegal, que supera al sector florícola, no contribuye al PIB. Además, fomenta el lavado de dinero y la competencia desleal con la minería formal (<em>Banco Central del Ecuador, 2023</em>).</p>
+            </div>
 
             <!-- Panel 4: Causas y Consecuencias -->
-            <article id="causas-consecuencias" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Causas y Consecuencias</h2>
-                </header>
-                
-                <section class="mb-4">
-                    <h3 id="causas" class="text-xl font-semibold text-green-900 mb-2">Causas Principales</h3>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Demanda global:</strong> El aumento del precio del oro desde 2008 impulsa la extracción ilegal (<em>Banco Central del Ecuador, 2023</em>).</li>
-                        <li><strong>Falta de fiscalización:</strong> La debilidad institucional y la corrupción permiten la proliferación de minas ilegales (<em>Arcernnr, 2023</em>).</li>
-                        <li><strong>Pobreza:</strong> La falta de oportunidades empuja a comunidades a participar en actividades ilegales (<em>Acción Ecológica, 2022</em>).</li>
-                        <li><strong>Permisividad:</strong> Procesos complejos para obtener permisos legales fomentan la informalidad.</li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h3 id="consecuencias" class="text-xl font-semibold text-green-900 mb-2">Consecuencias Críticas</h3>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Ambientales:</strong> Deforestación masiva, contaminación de ríos y pérdida de biodiversidad en áreas protegidas (<em>Ministerio del Ambiente, 2024</em>).</li>
-                        <li><strong>Sociales:</strong> Violencia, desplazamientos y ruptura del tejido social (<em>Human Rights Watch, 2023</em>).</li>
-                        <li><strong>Económicas:</strong> Pérdidas fiscales y dependencia de economías ilícitas (<em>Banco Central del Ecuador, 2023</em>).</li>
-                        <li><strong>Seguridad:</strong> Amenazas por grupos armados en regiones como Punino (<em>INTERPOL, 2023</em>).</li>
-                    </ul>
-                </section>
-            </article>
+            <div id="causas-consecuencias" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
+                <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Causas y Consecuencias</h2>
+                <h3 id="causas" class="text-xl font-semibold text-green-900 mt-4">Causas</h3>
+                <ul class="list-disc pl-5">
+                    <li><strong>Demanda global:</strong> El aumento del precio del oro desde 2008 impulsa la extracción ilegal (<em>Banco Central del Ecuador, 2023</em>).</li>
+                    <li><strong>Falta de fiscalización:</strong> La debilidad institucional y la corrupción permiten la proliferación de minas ilegales (<em>Arcernnr, 2023</em>).</li>
+                    <li><strong>Pobreza:</strong> La falta de oportunidades empuja a comunidades a participar en actividades ilegales (<em>Acción Ecológica, 2022</em>).</li>
+                    <li><strong>Permisividad:</strong> Procesos complejos para obtener permisos legales fomentan la informalidad.</li>
+                </ul>
+                <h3 id="consecuencias" class="text-xl font-semibold text-green-900 mt-4">Consecuencias</h3>
+                <ul class="list-disc pl-5">
+                    <li><strong>Ambientales:</strong> Deforestación masiva, contaminación de ríos y pérdida de biodiversidad en áreas protegidas (<em>Ministerio del Ambiente, 2024</em>).</li>
+                    <li><strong>Sociales:</strong> Violencia, desplazamientos y ruptura del tejido social (<em>Human Rights Watch, 2023</em>).</li>
+                    <li><strong>Económicas:</strong> Pérdidas fiscales y dependencia de economías ilícitas (<em>Banco Central del Ecuador, 2023</em>).</li>
+                    <li><strong>Seguridad:</strong> Amenazas por grupos armados en regiones como Punino (<em>INTERPOL, 2023</em>).</li>
+                </ul>
+            </div>
 
             <!-- Panel 5: Soluciones Propuestas -->
-            <article id="soluciones" class="panel bg-white p-6 rounded-lg shadow-lg lg:col-span-2 xl:col-span-1" data-aos="fade-up" data-aos-delay="100">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Soluciones Propuestas</h2>
-                </header>
-                <ul class="list-disc pl-5 space-y-3">
+            <div id="soluciones" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Soluciones Propuestas</h2>
+                <ul class="list-disc pl-5">
                     <li><strong>Fiscalización:</strong> Incrementar operativos con drones y tecnología satelital, aplicando sanciones del Decreto Ejecutivo No. 649 (<em>Arcernnr, 2023</em>).</li>
                     <li><strong>Formalización:</strong> Simplificar permisos y capacitar en técnicas sin mercurio (<em>Convención de Minamata, 2023</em>).</li>
                     <li><strong>Protección indígena:</strong> Apoyar legalmente a comunidades y promover turismo sostenible (<em>Acción Ecológica, 2022</em>).</li>
                     <li><strong>Concienciación:</strong> Campañas multimedia con videos, infografías y documentales (<em>Naciones Unidas, 2023</em>).</li>
                     <li><strong>Cooperación internacional:</strong> Colaborar con INTERPOL y acceder a fondos para restauración ambiental (<em>INTERPOL, 2023</em>).</li>
                 </ul>
-            </article>
+            </div>
         </div>
-    </main>
+    </div>
 
     <!-- Media Section -->
-    <section id="media" class="media-section py-12 text-center bg-gray-100" role="region" aria-labelledby="media-heading">
+    <div id="media" class="media-section py-12 text-center bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="media-heading" class="text-3xl font-bold text-green-900 mb-6" data-aos="fade-up">Multimedia: Impactos Visuales</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="media-item" data-aos="zoom-in">
-                    <iframe 
-                        src="https://www.youtube.com/embed/sample-video-id" 
-                        frameborder="0" 
-                        allowfullscreen 
-                        class="w-full h-48 rounded-lg shadow-md"
-                        title="Video sobre minería ilegal en Ecuador"
-                        loading="lazy">
-                    </iframe>
-                </div>
-                <div class="media-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img 
-                        data-src="https://via.placeholder.com/400x300?text=Río+Contaminado+por+Mineria" 
-                        alt="Río contaminado por minería ilegal mostrando aguas turbias y sedimentos" 
-                        class="lazy-img w-full h-48 object-cover rounded-lg shadow-md img-placeholder"
-                        loading="lazy">
-                </div>
-                <div class="media-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img 
-                        data-src="https://via.placeholder.com/400x300?text=Deforestación+en+Amazonía" 
-                        alt="Deforestación en la Amazonía causada por actividades mineras ilegales" 
-                        class="lazy-img w-full h-48 object-cover rounded-lg shadow-md img-placeholder"
-                        loading="lazy">
-                </div>
-                <div class="media-item" data-aos="zoom-in" data-
+            <h2 class="text-3xl font-bold text-green-900 mb-6" data-aos="fade-up">Multimedia: Impactos Visuales</h2>
+            <div class="media-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <iframe src="https://www.youtube.com/embed/sample-video-id" frameborder="0" allowfullscreen class="rounded-lg shadow-md" data-aos="zoom-in"></iframe>
+                <img src="https://via.placeholder.com/400x300?text=Río+Contaminado+por+Mineria" alt="Río contaminado por minería ilegal" class="rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://via.placeholder.com/400x300?text=Deforestación+en+Amazonía" alt="Deforestación en la Amazonía" class="rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://via.placeholder.com/400x300?text=Comunidades+Afectadas" alt="Comunidades afectadas por minería" class="rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="300">
+            </div>
+            <p class="mt-4 text-gray-600 italic" data-aos="fade-up">Nota: Los videos y las imágenes son ejemplos. Reemplácelos con contenido real sobre minería ilegal en Ecuador, como documentales o fotos de ríos contaminados.</p>
+        </div>
+    </div>
+
+    <!-- Comment Section -->
+    <div id="comments" class="comment-section max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-3xl font-bold text-green-900 mb-6" data-aos="fade-up">Comparte tu Opinión</h2>
+        <form class="comment-form space-y-4" id="commentForm" data-aos="fade-up" data-aos-delay="100">
+            <input type="text" id="name" placeholder="Tu Nombre" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            <textarea id="comment" placeholder="Tu Comentario" rows="5" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+            <button type="submit" class="bg-teal-600 text-white px-6 py-3 rounded-md hover:bg-green-900 transition">Enviar Comentario</button>
+        </form>
+        <div class="comments-list mt-8" id="commentsList" data-aos="fade-up" data-aos-delay="200"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">© 2025 Informe sobre Minería Ilegal en Ecuador. Todos los derechos reservados.</p>
+            <p class="text-sm mt-2">Fuentes: Banco Central del Ecuador, INTERPOL, Ministerio del Ambiente, Acción Ecológica, Universidad San Francisco de Quito, Human Rights Watch, Convención de Minamata, Naciones Unidas.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="https://facebook.com" target="_blank" class="social-icon text-white"><i class="fab fa-facebook-f fa-2x"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon text-white"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://tiktok.com" target="_blank" class="social-icon text-white"><i class="fab fa-tiktok fa-2x"></i></a>
+                <a href="https://youtube.com" target="_blank" class="social-icon text-white"><i class="fab fa-youtube fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 1000 });
+
+        // Sticky Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Comment System
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentsList = document.getElementById('commentsList');
+
+            // Create comment element
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment border-b border-gray-200 py-4';
+            commentDiv.innerHTML = `<h3 class="text-lg font-semibold text-teal-600">${name}</h3><p class="text-gray-600">${comment}</p><p class="text-sm text-gray-400"><em>${new Date().toLocaleString()}</em></p>`;
+            commentDiv.setAttribute('data-aos', 'fade-up');
+
+            // Append comment
+            commentsList.prepend(commentDiv);
+            AOS.refresh();
+
+            // Save to localStorage
+            const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+            comments.push({ name, comment, date: new Date().toISOString() });
+            localStorage.setItem('comments', JSON.stringify(comments));
+
+            // Clear form
+            document.getElementById('commentForm').reset();
+        });
+
+        // Load comments from localStorage
+        window.onload = function() {
+            const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+            const commentsList = document.getElementById('commentsList');
+            comments.reverse().forEach(c => {
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'comment border-b border-gray-200 py-4';
+                commentDiv.innerHTML = `<h3 class="text-lg font-semibold text-teal-600">${c.name}</h3><p class="text-gray-600">${c.comment}</p><p class="text-sm text-gray-400"><em>${new Date(c.date).toLocaleString()}</em></p>`;
+                commentDiv.setAttribute('data-aos', 'fade-up');
+                commentsList.appendChild(commentDiv);
+            });
+            AOS.refresh();
+        };
+    </script>
+</body>
+</html>
