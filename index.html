@@ -111,6 +111,9 @@
                 <p class="text-xl md:text-2xl opacity-90">
                     Una amenaza crítica para nuestro medio ambiente y sociedad
                 </p>
+                 <p class="text-xl md:text-2xl opacity-90">
+                   ¡UNA HERIDA ABIERTA EN EL CORAZÓN DE ECUADOR! 
+                </p>
             </div>
         </div>
 
@@ -537,7 +540,7 @@
         <!-- Footer -->
     <footer class="bg-green-900 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm">© 2025 Informe sobre Minería Ilegal en Ecuador. Todos los derechos reservados.</p>
+            <p class="text-sm">© 2025 Minería Ilegal en Ecuador. Todos los derechos reservados.</p>
             <p class="text-sm mt-2">Fuentes: Banco Central del Ecuador, INTERPOL, Ministerio del Ambiente, Acción Ecológica, Universidad San Francisco de Quito, Human Rights Watch, Convención de Minamata, Naciones Unidas.</p>
             <div class="mt-4 flex justify-center space-x-6">
                 <a href="https://facebook.com" target="_blank" class="social-icon text-white"><i class="fab fa-facebook-f fa-2x"></i></a>
@@ -551,5 +554,44 @@
 
     <!-- Script JavaScript personalizado -->
     <script src="css/script.js"></script>
+
+    <!-- Firebase App y Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCdrb2ixpDsYcSAS_3stjDE3lgY7JEj4jc",
+    authDomain: "mineria-ilegal-27d99.firebaseapp.com",
+    databaseURL: "https://mineria-ilegal-27d99-default-rtdb.firebaseio.com",
+    projectId: "mineria-ilegal-27d99",
+    storageBucket: "mineria-ilegal-27d99.appspot.com",
+    messagingSenderId: "514756213670",
+    appId: "1:514756213670:web:ed19c9f3cf48a7f5b5ad67",
+    measurementId: "G-37JWZ8P5C1"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  function enviarComentario() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const texto = document.getElementById('comentario').value.trim();
+    if (!nombre || !texto) return;
+    db.ref('comentarios').push({ nombre, texto });
+    document.getElementById('nombre').value = '';
+    document.getElementById('comentario').value = '';
+  }
+
+  db.ref('comentarios').on('child_added', snapshot => {
+    const data = snapshot.val();
+    const div = document.createElement('div');
+    div.className = 'comentario';
+    div.innerHTML = `<div class="autor">${data.nombre}:</div><div>${data.texto}</div>`;
+    document.getElementById('lista-comentarios').appendChild(div);
+  });
+</script>
+
+
 </body>
 </html>
