@@ -3,508 +3,595 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Análisis exhaustivo de la minería ilegal en Ecuador: impactos ambientales, sociales y económicos. Soluciones para un desarrollo sostenible.">
-    <meta name="keywords" content="minería ilegal, Ecuador, Amazonía, medio ambiente, contaminación, mercurio, sostenibilidad">
-    <meta name="author" content="Investigación Minería Ilegal Ecuador">
-    <meta property="og:title" content="Minería Ilegal en Ecuador - Informe Completo">
-    <meta property="og:description" content="Un análisis exhaustivo de los impactos, causas y soluciones de la minería ilegal en Ecuador">
-    <meta property="og:type" content="website">
-    <title>Minería Ilegal en Ecuador - Informe Completo</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f9fafb;
-            line-height: 1.6;
-        }
-        
-        /* Improved contrast and accessibility */
-        .navbar {
-            transition: all 0.3s ease;
-            background: linear-gradient(135deg, #1a3c34 0%, #2e6b5b 100%);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar.scrolled {
-            background: rgba(26, 60, 52, 0.98);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-        }
-        
-        .nav-item {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-item a {
-            padding: 0.75rem 1rem;
-            border-radius: 0.375rem;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            position: relative;
-        }
-        
-        .nav-item a:focus {
-            outline: 2px solid #34d399;
-            outline-offset: 2px;
-        }
-        
-        .nav-item:hover a {
-            transform: translateY(-2px);
-        }
-        
-        .nav-item.introduccion:hover a { background: #059669; }
-        .nav-item.problematica:hover a { background: #d97706; }
-        .nav-item.impactos:hover a { background: #dc2626; }
-        .nav-item.causas-consecuencias:hover a { background: #2563eb; }
-        .nav-item.soluciones:hover a { background: #059669; }
-        
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 50;
-            min-width: 200px;
-        }
-        
-        .dropdown:hover .dropdown-menu,
-        .dropdown:focus-within .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: #374151;
-            text-decoration: none;
-            transition: background 0.2s ease;
-            border-radius: 0.375rem;
-            margin: 0.25rem;
-        }
-        
-        .dropdown-menu a:hover,
-        .dropdown-menu a:focus {
-            background: #f3f4f6;
-            color: #059669;
-        }
-        
-        /* Mobile menu styles */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(26, 60, 52, 0.98);
-            z-index: 1000;
-            padding-top: 4rem;
-        }
-        
-        .mobile-menu.active {
-            display: block;
-        }
-        
-        .mobile-menu-item {
-            display: block;
-            padding: 1rem 2rem;
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.3s ease;
-        }
-        
-        .mobile-menu-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 2px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-        
-        @media (max-width: 768px) {
-            .desktop-menu {
-                display: none;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-        }
-        
-        .panel {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .panel:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .media-item {
-            transition: transform 0.3s ease;
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-        
-        .media-item:hover {
-            transform: scale(1.03);
-        }
-        
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            transform: scale(1.2);
-            color: #34d399;
-        }
-        
-        /* Loading placeholder for lazy images */
-        .img-placeholder {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-        
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-        
-        /* Improved form styles */
-        .form-input {
-            transition: all 0.3s ease;
-            border: 2px solid #d1d5db;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: #059669;
-            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
-        }
-        
-        .form-input.error {
-            border-color: #dc2626;
-            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
-        }
-        
-        .error-message {
-            color: #dc2626;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-        }
-        
-        /* Skip link for accessibility */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 6px;
-            background: #000;
-            color: #fff;
-            padding: 8px;
-            text-decoration: none;
-            border-radius: 4px;
-            z-index: 1000;
-        }
-        
-        .skip-link:focus {
-            top: 6px;
-        }
-        
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .panel {
-                border: 2px solid #000;
-            }
-            
-            .nav-item a {
-                border: 1px solid rgba(255, 255, 255, 0.5);
-            }
-        }
-        
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+    <title>Minería Ilegal Ecuador</title>
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Fuente Inter de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Skip Link for Screen Readers -->
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-    
-    <!-- Navigation -->
-    <nav class="navbar fixed top-0 w-full z-50 text-white" role="navigation" aria-label="Navegación principal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold">Minería Ilegal en Ecuador</h1>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Menú de Navegación Fijo -->
+        <nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 border-b-2 border-green-600">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <h3 class="text-lg font-bold text-green-600">
+                            <i class="fas fa-mountain mr-2"></i>
+                            Minería Ilegal Ecuador
+                        </h3>
+                    </div>
+                    <div class="hidden md:flex space-x-1">
+                        <button onclick="scrollToSection('introduccion')"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors">
+                            Introducción
+                        </button>
+                        <button onclick="scrollToSection('problematica')"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+                            Problemática
+                        </button>
+                        <button onclick="scrollToSection('impactos')"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors">
+                            Impactos
+                        </button>
+                        <button onclick="scrollToSection('causas')"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors">
+                            Causas
+                        </button>
+                        <button onclick="scrollToSection('soluciones')"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+                            Soluciones
+                        </button>
+                        <button onclick="scrollToSection('multimedia')"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+                            Multimedia
+                        </button>
+                        <button onclick="scrollToSection('comentarios')"
+                            class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors">
+                            Comentarios
+                        </button>
+                    </div>
+                    <!-- Menú móvil -->
+                    <div class="md:hidden">
+                        <button onclick="toggleMobileMenu()"
+                            class="text-gray-700 hover:text-green-600 focus:outline-none">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
                 </div>
-                
-                <!-- Desktop Menu -->
-                <div class="desktop-menu">
-                    <ul class="flex space-x-2" role="menubar">
-                        <li class="nav-item introduccion dropdown" role="menuitem">
-                            <a href="#introduccion" class="text-white hover:text-white px-3 py-2 rounded-md" 
-                               aria-haspopup="true" aria-expanded="false">Introducción</a>
-                            <div class="dropdown-menu" role="menu" aria-label="Submenú Introducción">
-                                <a href="#objetivo-general" role="menuitem">Objetivo General</a>
-                                <a href="#objetivos-especificos" role="menuitem">Objetivos Específicos</a>
-                            </div>
-                        </li>
-                        <li class="nav-item problematica dropdown" role="menuitem">
-                            <a href="#problematica" class="text-white hover:text-white px-3 py-2 rounded-md"
-                               aria-haspopup="true" aria-expanded="false">Problemática</a>
-                            <div class="dropdown-menu" role="menu" aria-label="Submenú Problemática">
-                                <a href="#problematica-macro" role="menuitem">Macro</a>
-                                <a href="#problematica-meso" role="menuitem">Meso</a>
-                                <a href="#problematica-micro" role="menuitem">Micro</a>
-                            </div>
-                        </li>
-                        <li class="nav-item impactos dropdown" role="menuitem">
-                            <a href="#impactos" class="text-white hover:text-white px-3 py-2 rounded-md"
-                               aria-haspopup="true" aria-expanded="false">Impactos</a>
-                            <div class="dropdown-menu" role="menu" aria-label="Submenú Impactos">
-                                <a href="#salud-publica" role="menuitem">Salud Pública</a>
-                                <a href="#poblacion" role="menuitem">Población</a>
-                                <a href="#economia" role="menuitem">Economía</a>
-                            </div>
-                        </li>
-                        <li class="nav-item causas-consecuencias dropdown" role="menuitem">
-                            <a href="#causas-consecuencias" class="text-white hover:text-white px-3 py-2 rounded-md"
-                               aria-haspopup="true" aria-expanded="false">Causas y Consecuencias</a>
-                            <div class="dropdown-menu" role="menu" aria-label="Submenú Causas y Consecuencias">
-                                <a href="#causas" role="menuitem">Causas</a>
-                                <a href="#consecuencias" role="menuitem">Consecuencias</a>
-                            </div>
-                        </li>
-                        <li class="nav-item soluciones" role="menuitem">
-                            <a href="#soluciones" class="text-white hover:text-white px-3 py-2 rounded-md">Soluciones Propuestas</a>
-                        </li>
-                        <li class="nav-item" role="menuitem">
-                            <a href="#media" class="text-white hover:text-gray-300 px-3 py-2 rounded-md">Multimedia</a>
-                        </li>
-                        <li class="nav-item" role="menuitem">
-                            <a href="#comments" class="text-white hover:text-gray-300 px-3 py-2 rounded-md">Comentarios</a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="hamburger" onclick="toggleMobileMenu()" aria-label="Abrir menú de navegación" role="button" tabindex="0">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <!-- Menú móvil desplegable -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4">
+                    <div class="flex flex-col space-y-1">
+                        <button onclick="scrollAndHideMenu('introduccion')"
+                            class="text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-green-50">
+                            Introducción
+                        </button>
+                        <button onclick="scrollAndHideMenu('problematica')"
+                            class="text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-600 hover:bg-red-50">
+                            Problemática
+                        </button>
+                        <button onclick="scrollAndHideMenu('impactos')"
+                            class="text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50">
+                            Impactos
+                        </button>
+                        <button onclick="scrollAndHideMenu('causas')"
+                            class="text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50">
+                            Causas
+                        </button>
+                        <button onclick="scrollAndHideMenu('soluciones')"
+                            class="text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+                            Soluciones
+                        </button>
+                        <button onclick="scrollAndHideMenu('multimedia')"
+                            class="text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-600 hover:bg-red-50">
+                            Multimedia
+                        </button>
+                        <button onclick="scrollAndHideMenu('comentarios')"
+                            class="text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-green-50">
+                            Comentarios
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú de navegación móvil">
-            <div class="flex justify-end p-4">
-                <button onclick="toggleMobileMenu()" class="text-white text-2xl" aria-label="Cerrar menú">&times;</button>
+        </nav>
+
+        <!-- Espaciador para el menú fijo -->
+        <div class="h-16"></div>
+
+        <!-- Sección de Banner/Hero -->
+        <div class="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    Minería Ilegal en Ecuador
+                </h1>
+                <p class="text-xl md:text-2xl opacity-90">
+                    Una amenaza crítica para nuestro medio ambiente y sociedad
+                </p>
+                 <p class="text-xl md:text-2xl opacity-90">
+                   ¡UNA HERIDA ABIERTA EN EL CORAZÓN DE ECUADOR! 
+                </p>
             </div>
-            <a href="#introduccion" class="mobile-menu-item" onclick="toggleMobileMenu()">Introducción</a>
-            <a href="#problematica" class="mobile-menu-item" onclick="toggleMobileMenu()">Problemática</a>
-            <a href="#impactos" class="mobile-menu-item" onclick="toggleMobileMenu()">Impactos</a>
-            <a href="#causas-consecuencias" class="mobile-menu-item" onclick="toggleMobileMenu()">Causas y Consecuencias</a>
-            <a href="#soluciones" class="mobile-menu-item" onclick="toggleMobileMenu()">Soluciones Propuestas</a>
-            <a href="#media" class="mobile-menu-item" onclick="toggleMobileMenu()">Multimedia</a>
-            <a href="#comments" class="mobile-menu-item" onclick="toggleMobileMenu()">Comentarios</a>
         </div>
-    </nav>
 
-    <!-- Header -->
-    <header id="home" class="pt-24 pb-12 text-center bg-gradient-to-r from-green-900 to-teal-700 text-white" role="banner">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Minería Ilegal en Ecuador</h1>
-            <p class="text-lg md:text-xl italic">Un análisis exhaustivo de sus impactos, causas y soluciones para un futuro sostenible</p>
+        <!-- Contenido principal con ancho aumentado y padding consistente -->
+        <div class="max-w-7xl mx-auto px-6 py-12" id="introduccion">
+            <!-- Introducción -->
+            <section class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-green-600 pb-2">
+                    <i class="fas fa-info-circle mr-3 text-green-600"></i>
+                    Introducción
+                </h2>
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        La minería ilegal en Ecuador se ha convertido en una de las
+                        principales amenazas ambientales y sociales del país. Esta
+                        actividad extractiva no regulada causa daños irreversibles a los
+                        ecosistemas, contamina fuentes de agua, destruye la biodiversidad
+                        y afecta gravemente a las comunidades locales.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Ecuador, con su rica biodiversidad y recursos naturales, enfrenta
+                        el desafío de combatir estas prácticas ilegales que operan
+                        principalmente en zonas de alta sensibilidad ecológica como la
+                        Amazonía y áreas protegidas.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Problemática -->
+            <section id="problematica" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-red-600 pb-2">
+                    <i class="fas fa-exclamation-triangle mr-3 text-red-600"></i>
+                    Problemática
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-red-600 mb-4">
+                            Extensión del Problema
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Más de 3,000 puntos de minería ilegal identificados</li>
+                            <li>• Presencia en 15 de las 24 provincias del país</li>
+                            <li>• Afectación de más de 100,000 hectáreas</li>
+                            <li>• Operaciones en áreas protegidas y reservas</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-red-600 mb-4">
+                            Zonas Más Afectadas
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Provincia de Esmeraldas</li>
+                            <li>• Región Amazónica (Morona Santiago, Zamora Chinchipe)</li>
+                            <li>• Provincia del Oro</li>
+                            <li>• Áreas cercanas a ríos y bosques primarios</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Impactos -->
+            <section id="impactos" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-orange-600 pb-2">
+                    <i class="fas fa-leaf mr-3 text-orange-600"></i>
+                    Impactos Ambientales y Sociales
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-water text-4xl text-blue-600 mb-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">
+                                Contaminación del Agua
+                            </h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li>• Mercurio en ríos y acuíferos</li>
+                            <li>• Sedimentación de cursos de agua</li>
+                            <li>• Destrucción de ecosistemas acuáticos</li>
+                            <li>• Agua no apta para consumo humano</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-tree text-4xl text-green-600 mb-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">
+                                Deforestación
+                            </h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li>• Pérdida de bosque primario</li>
+                            <li>• Destrucción de hábitats naturales</li>
+                            <li>• Extinción de especies endémicas</li>
+                            <li>• Alteración del clima local</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-users text-4xl text-purple-600 mb-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">
+                                Impacto Social
+                            </h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li>• Desplazamiento de comunidades</li>
+                            <li>• Problemas de salud pública</li>
+                            <li>• Conflictos sociales</li>
+                            <li>• Pérdida de medios de vida tradicionales</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Causas y Consecuencias -->
+            <section id="causas" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-purple-600 pb-2">
+                    <i class="fas fa-search mr-3 text-purple-600"></i>
+                    Causas y Consecuencias
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-semibold text-purple-600 mb-4">
+                            Principales Causas
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-purple-600 pl-4">
+                                <h4 class="font-semibold text-gray-800">
+                                    Factores Económicos
+                                </h4>
+                                <p class="text-gray-700 text-sm">
+                                    Pobreza, falta de oportunidades laborales, altos precios del
+                                    oro
+                                </p>
+                            </div>
+                            <div class="border-l-4 border-purple-600 pl-4">
+                                <h4 class="font-semibold text-gray-800">
+                                    Factores Institucionales
+                                </h4>
+                                <p class="text-gray-700 text-sm">
+                                    Débil control estatal, corrupción, falta de presencia
+                                    institucional
+                                </p>
+                            </div>
+                            <div class="border-l-4 border-purple-600 pl-4">
+                                <h4 class="font-semibold text-gray-800">
+                                    Factores Geográficos
+                                </h4>
+                                <p class="text-gray-700 text-sm">
+                                    Zonas remotas de difícil acceso, abundancia de recursos
+                                    minerales
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-semibold text-red-600 mb-4">
+                            Consecuencias Graves
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-red-600 pl-4">
+                                <h4 class="font-semibold text-gray-800">
+                                    Daño Irreversible
+                                </h4>
+                                <p class="text-gray-700 text-sm">
+                                    Destrucción de ecosistemas que tardará décadas en
+                                    recuperarse
+                                </p>
+                            </div>
+                            <div class="border-l-4 border-red-600 pl-4">
+                                <h4 class="font-semibold text-gray-800">
+                                    Crisis de Salud
+                                </h4>
+                                <p class="text-gray-700 text-sm">
+                                    Enfermedades por mercurio, problemas respiratorios, cáncer
+                                </p>
+                            </div>
+                            <div class="border-l-4 border-red-600 pl-4">
+                                <h4 class="font-semibold text-gray-800">
+                                    Pérdida Económica
+                                </h4>
+                                <p class="text-gray-700 text-sm">
+                                    Daños al turismo, agricultura y otros sectores productivos
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Soluciones -->
+            <section id="soluciones" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-600 pb-2">
+                    <i class="fas fa-lightbulb mr-3 text-blue-600"></i>
+                    Soluciones Propuestas
+                </h2>
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">
+                                    1
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">
+                                        Fortalecimiento Institucional
+                                    </h4>
+                                    <p class="text-gray-700 text-sm">
+                                        Mayor presencia estatal, mejores sistemas de vigilancia y
+                                        control
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">
+                                    2
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">
+                                        Desarrollo Alternativo
+                                    </h4>
+                                    <p class="text-gray-700 text-sm">
+                                        Programas de empleo, turismo sostenible, agricultura
+                                        ecológica
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">
+                                    3
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">
+                                        Educación y Concienciación
+                                    </h4>
+                                    <p class="text-gray-700 text-sm">
+                                        Campañas educativas sobre impactos ambientales y
+                                        alternativas
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">
+                                    4
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">
+                                        Marco Legal Robusto
+                                    </h4>
+                                    <p class="text-gray-700 text-sm">
+                                        Leyes más severas, sanciones efectivas, justicia
+                                        especializada
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">
+                                    5
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">
+                                        Tecnología de Monitoreo
+                                    </h4>
+                                    <p class="text-gray-700 text-sm">
+                                        Satelites, drones, sistemas de alerta temprana
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">
+                                    6
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">
+                                        Participación Comunitaria
+                                    </h4>
+                                    <p class="text-gray-700 text-sm">
+                                        Involucrar a comunidades locales en la protección
+                                        ambiental
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Multimedia -->
+            <section id="multimedia" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-red-600 pb-2">
+                    <i class="fas fa-video mr-3 text-red-600"></i>
+                    Multimedia - Videos Explicativos
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">
+                            Documental: Minería Ilegal en Ecuador
+                        </h3>
+                        <div class="aspect-video bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                            <iframe
+                                class="w-full h-full rounded-lg"
+                                src="https://www.youtube.com/embed/s2I9Dtzmmxo?si=jpw1y5YB8nBnX6w5"
+                                title="Minería Ilegal Ecuador 1"
+                                frameborder="0"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <p class="text-gray-700 text-sm">
+                            Investigación profunda sobre el impacto de la minería ilegal en
+                            las comunidades ecuatorianas.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">
+                            Reportaje: Contaminación por Mercurio
+                        </h3>
+                        <div class="aspect-video bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                            <iframe
+                                class="w-full h-full rounded-lg"
+                                src="https://www.youtube.com/embed/your-video-id-2"
+                                title="Minería Ilegal Ecuador 2"
+                                frameborder="0"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <p class="text-gray-700 text-sm">
+                            Estudio sobre los efectos del mercurio en la salud de las
+                            poblaciones cercanas a zonas mineras.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">
+                            Testimonios de Comunidades Afectadas
+                        </h3>
+                        <div class="aspect-video bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                            <iframe
+                                class="w-full h-full rounded-lg"
+                                src="https://www.youtube.com/embed/your-video-id-3"
+                                title="Minería Ilegal Ecuador 3"
+                                frameborder="0"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <p class="text-gray-700 text-sm">
+                            Voces de las comunidades que han sido directamente impactadas
+                            por la minería ilegal.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">
+                            Soluciones y Alternativas Sostenibles
+                        </h3>
+                        <div class="aspect-video bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                            <iframe
+                                class="w-full h-full rounded-lg"
+                                src="https://www.youtube.com/embed/your-video-id-4"
+                                title="Minería Ilegal Ecuador 4"
+                                frameborder="0"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <p class="text-gray-700 text-sm">
+                            Propuestas de desarrollo sostenible como alternativa a la
+                            minería ilegal.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comentarios -->
+            <section id="comentarios" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-green-600 pb-2">
+                    <i class="fas fa-comments mr-3 text-green-600"></i>
+                    Comentarios de la Comunidad
+                </h2>
+
+                <!-- Formulario para nuevo comentario -->
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Comparte tu opinión</h3>
+                    <form id="comment-form" class="space-y-6">
+                        <div>
+                            <label for="comment-name" class="block text-sm font-medium text-gray-700 mb-2">
+                                Tu nombre
+                            </label>
+                            <input
+                                type="text"
+                                id="comment-name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800"
+                                placeholder="Ingresa tu nombre"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="comment-text" class="block text-sm font-medium text-gray-700 mb-2">
+                                Tu comentario
+                            </label>
+                            <textarea
+                                id="comment-text"
+                                rows="5"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800"
+                                placeholder="Comparte tu opinión sobre este tema..."
+                                required
+                            ></textarea>
+                        </div>
+                        <button
+                            type="submit"
+                            class="bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition-colors font-medium text-lg shadow-md"
+                        >
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Publicar Comentario
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Lista de comentarios -->
+                 <div class="max-w-3xl mx-auto">
+                        <div id="comments-container" class="space-y-8">
+                            <!-- Los comentarios se cargarán aquí dinámicamente -->
+                        </div>
+                </div>
+            </section>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main id="main-content" class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" role="main">
-        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            <!-- Panel 1: Introducción y Problemática -->
-            <article id="introduccion" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Introducción</h2>
-                </header>
-                <p class="mb-4">La minería ilegal en Ecuador, especialmente en regiones como la Amazonía, la Sierra y la Costa, es una amenaza crítica para el medio ambiente, la salud pública, la economía y la cohesión social. Esta actividad, impulsada por la alta demanda de oro, ha generado deforestación, contaminación y violencia en comunidades vulnerables. Este informe busca informar, concienciar y proponer soluciones para combatir este problema.</p>
-                
-                <section>
-                    <h3 id="objetivo-general" class="text-xl font-semibold text-green-900 mt-4 mb-2">Objetivo General</h3>
-                    <p class="mb-4">Analizar los impactos, causas y consecuencias de la minería ilegal en Ecuador para proponer soluciones que promuevan el desarrollo sostenible.</p>
-                </section>
-                
-                <section>
-                    <h3 id="objetivos-especificos" class="text-xl font-semibold text-green-900 mt-4 mb-2">Objetivos Específicos</h3>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>Identificar los efectos en la salud pública en comunidades cercanas a zonas mineras.</li>
-                        <li>Analizar los impactos socioeconómicos en comunidades locales y la economía nacional.</li>
-                        <li>Evaluar las causas estructurales y coyunturales de la minería ilegal.</li>
-                        <li>Proponer estrategias multisectoriales para mitigar el problema.</li>
-                    </ul>
-                </section>
-            </article>
-
-            <!-- Panel 2: Problemática -->
-            <article id="problematica" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Problemática</h2>
-                </header>
-                
-                <section class="mb-4">
-                    <h3 id="problematica-macro" class="text-lg font-semibold text-green-900 mb-2">Nivel Macro</h3>
-                    <p class="mb-3">La demanda global de oro (hasta $2,000 por onza en 2023) y la debilidad institucional del Estado, con solo el 10% de actividades mineras legales en Napo, fomentan la minería ilegal. Grupos armados, como las disidencias de las FARC, financian operaciones, amenazando la seguridad nacional (<em>Banco Central del Ecuador, 2023; INTERPOL, 2023</em>).</p>
-                </section>
-                
-                <section class="mb-4">
-                    <h3 id="problematica-meso" class="text-lg font-semibold text-green-900 mb-2">Nivel Meso</h3>
-                    <p class="mb-3">Comunidades indígenas y campesinas en Napo, Orellana y Zamora Chinchipe enfrentan contaminación de ríos con mercurio, deforestación (1,700 hectáreas en Napo desde 2017) y violencia por grupos armados, lo que genera desplazamientos forzados (<em>Ministerio del Ambiente, 2024; Acción Ecológica, 2022</em>).</p>
-                </section>
-                
-                <section>
-                    <h3 id="problematica-micro" class="text-lg font-semibold text-green-900 mb-2">Nivel Micro</h3>
-                    <p>La exposición al mercurio causa trastornos neurológicos y defectos congénitos. En Zamora Chinchipe, el 26% de los niños presentan niveles de mercurio peligrosos. La deserción escolar y la criminalización de líderes ambientales agravan la crisis familiar (<em>Universidad San Francisco de Quito, 2023; Human Rights Watch, 2023</em>).</p>
-                </section>
-            </article>
-
-            <!-- Panel 3: Impactos Detallados -->
-            <article id="impactos" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Impactos de la Minería Ilegal</h2>
-                </header>
-                
-                <section class="mb-4">
-                    <h3 id="salud-publica" class="text-xl font-semibold text-green-900 mb-2">Salud Pública</h3>
-                    <p class="mb-3">El uso de mercurio en la minería ilegal contamina ríos, suelos y el aire, afectando a comunidades que dependen de estas fuentes. En la Amazonía, los peces presentan niveles de mercurio hasta 1,000 veces superiores a los límites seguros, causando trastornos neurológicos, problemas renales y daños cerebrales. Las mujeres embarazadas son especialmente vulnerables, con riesgos de defectos congénitos en sus bebés. Un solo gramo de mercurio puede contaminar un lago de 8 hectáreas (<em>Naciones Unidas, 2023</em>).</p>
-                </section>
-                
-                <section class="mb-4">
-                    <h3 id="poblacion" class="text-xl font-semibold text-green-900 mb-2">Población</h3>
-                    <p class="mb-3">Comunidades indígenas como los kichwas en Napo enfrentan la pérdida de sus fuentes de agua y tierras agrícolas. La presencia de grupos armados introduce violencia, desplazamientos y problemas sociales como el aumento del consumo de alcohol y la deserción escolar. Los líderes que denuncian estas actividades enfrentan persecución judicial, debilitando la resistencia comunitaria (<em>Acción Ecológica, 2022</em>).</p>
-                </section>
-                
-                <section>
-                    <h3 id="economia" class="text-xl font-semibold text-green-900 mb-2">Economía</h3>
-                    <p>La minería ilegal priva al Estado de ingresos fiscales, con pérdidas millonarias que podrían destinarse a salud y educación. En 2022, las exportaciones mineras legales generaron $2,119 millones, pero la minería ilegal, que supera al sector florícola, no contribuye al PIB. Además, fomenta el lavado de dinero y la competencia desleal con la minería formal (<em>Banco Central del Ecuador, 2023</em>).</p>
-                </section>
-            </article>
-
-            <!-- Panel 4: Causas y Consecuencias -->
-            <article id="causas-consecuencias" class="panel bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Causas y Consecuencias</h2>
-                </header>
-                
-                <section class="mb-4">
-                    <h3 id="causas" class="text-xl font-semibold text-green-900 mb-2">Causas Principales</h3>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Demanda global:</strong> El aumento del precio del oro desde 2008 impulsa la extracción ilegal (<em>Banco Central del Ecuador, 2023</em>).</li>
-                        <li><strong>Falta de fiscalización:</strong> La debilidad institucional y la corrupción permiten la proliferación de minas ilegales (<em>Arcernnr, 2023</em>).</li>
-                        <li><strong>Pobreza:</strong> La falta de oportunidades empuja a comunidades a participar en actividades ilegales (<em>Acción Ecológica, 2022</em>).</li>
-                        <li><strong>Permisividad:</strong> Procesos complejos para obtener permisos legales fomentan la informalidad.</li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h3 id="consecuencias" class="text-xl font-semibold text-green-900 mb-2">Consecuencias Críticas</h3>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Ambientales:</strong> Deforestación masiva, contaminación de ríos y pérdida de biodiversidad en áreas protegidas (<em>Ministerio del Ambiente, 2024</em>).</li>
-                        <li><strong>Sociales:</strong> Violencia, desplazamientos y ruptura del tejido social (<em>Human Rights Watch, 2023</em>).</li>
-                        <li><strong>Económicas:</strong> Pérdidas fiscales y dependencia de economías ilícitas (<em>Banco Central del Ecuador, 2023</em>).</li>
-                        <li><strong>Seguridad:</strong> Amenazas por grupos armados en regiones como Punino (<em>INTERPOL, 2023</em>).</li>
-                    </ul>
-                </section>
-            </article>
-
-            <!-- Panel 5: Soluciones Propuestas -->
-            <article id="soluciones" class="panel bg-white p-6 rounded-lg shadow-lg lg:col-span-2 xl:col-span-1" data-aos="fade-up" data-aos-delay="100">
-                <header>
-                    <h2 class="text-2xl font-bold text-green-900 border-b-2 border-teal-600 pb-2 mb-4">Soluciones Propuestas</h2>
-                </header>
-                <ul class="list-disc pl-5 space-y-3">
-                    <li><strong>Fiscalización:</strong> Incrementar operativos con drones y tecnología satelital, aplicando sanciones del Decreto Ejecutivo No. 649 (<em>Arcernnr, 2023</em>).</li>
-                    <li><strong>Formalización:</strong> Simplificar permisos y capacitar en técnicas sin mercurio (<em>Convención de Minamata, 2023</em>).</li>
-                    <li><strong>Protección indígena:</strong> Apoyar legalmente a comunidades y promover turismo sostenible (<em>Acción Ecológica, 2022</em>).</li>
-                    <li><strong>Concienciación:</strong> Campañas multimedia con videos, infografías y documentales (<em>Naciones Unidas, 2023</em>).</li>
-                    <li><strong>Cooperación internacional:</strong> Colaborar con INTERPOL y acceder a fondos para restauración ambiental (<em>INTERPOL, 2023</em>).</li>
-                </ul>
-            </article>
+        <!-- Footer -->
+    <footer class="bg-green-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">© 2025 Minería Ilegal en Ecuador. Todos los derechos reservados.</p>
+            <p class="text-sm mt-2">Fuentes: Banco Central del Ecuador, INTERPOL, Ministerio del Ambiente, Acción Ecológica, Universidad San Francisco de Quito, Human Rights Watch, Convención de Minamata, Naciones Unidas.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="https://facebook.com" target="_blank" class="social-icon text-white"><i class="fab fa-facebook-f fa-2x"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon text-white"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://tiktok.com" target="_blank" class="social-icon text-white"><i class="fab fa-tiktok fa-2x"></i></a>
+                <a href="https://youtube.com" target="_blank" class="social-icon text-white"><i class="fab fa-youtube fa-2x"></i></a>
+            </div>
         </div>
-    </main>
+    </footer>
+    </div>
 
-    <!-- Media Section -->
-    <section id="media" class="media-section py-12 text-center bg-gray-100" role="region" aria-labelledby="media-heading">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="media-heading" class="text-3xl font-bold text-green-900 mb-6" data-aos="fade-up">Multimedia: Impactos Visuales</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="media-item" data-aos="zoom-in">
-                    <iframe 
-                        src="https://www.youtube.com/embed/sample-video-id" 
-                        frameborder="0" 
-                        allowfullscreen 
-                        class="w-full h-48 rounded-lg shadow-md"
-                        title="Video sobre minería ilegal en Ecuador"
-                        loading="lazy">
-                    </iframe>
-                </div>
-                <div class="media-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img 
-                        data-src="https://via.placeholder.com/400x300?text=Río+Contaminado+por+Mineria" 
-                        alt="Río contaminado por minería ilegal mostrando aguas turbias y sedimentos" 
-                        class="lazy-img w-full h-48 object-cover rounded-lg shadow-md img-placeholder"
-                        loading="lazy">
-                </div>
-                <div class="media-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img 
-                        data-src="https://via.placeholder.com/400x300?text=Deforestación+en+Amazonía" 
-                        alt="Deforestación en la Amazonía causada por actividades mineras ilegales" 
-                        class="lazy-img w-full h-48 object-cover rounded-lg shadow-md img-placeholder"
-                        loading="lazy">
-                </div>
-                <div class="media-item" data-aos="zoom-in" data-
+    <!-- Script JavaScript personalizado -->
+    <script src="css/script.js"></script>
+
+    <!-- Firebase App y Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCdrb2ixpDsYcSAS_3stjDE3lgY7JEj4jc",
+    authDomain: "mineria-ilegal-27d99.firebaseapp.com",
+    databaseURL: "https://mineria-ilegal-27d99-default-rtdb.firebaseio.com",
+    projectId: "mineria-ilegal-27d99",
+    storageBucket: "mineria-ilegal-27d99.appspot.com",
+    messagingSenderId: "514756213670",
+    appId: "1:514756213670:web:ed19c9f3cf48a7f5b5ad67",
+    measurementId: "G-37JWZ8P5C1"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  function enviarComentario() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const texto = document.getElementById('comentario').value.trim();
+    if (!nombre || !texto) return;
+    db.ref('comentarios').push({ nombre, texto });
+    document.getElementById('nombre').value = '';
+    document.getElementById('comentario').value = '';
+  }
+
+  db.ref('comentarios').on('child_added', snapshot => {
+    const data = snapshot.val();
+    const div = document.createElement('div');
+    div.className = 'comentario';
+    div.innerHTML = `<div class="autor">${data.nombre}:</div><div>${data.texto}</div>`;
+    document.getElementById('lista-comentarios').appendChild(div);
+  });
+</script>
+
+
+</body>
+</html>
